@@ -1,3 +1,5 @@
+# 图表部分功能说明
+
 这个图表库有一个基类是THBaseChart，它抽取了常用图表的一些公共属性，这些公共属性主要用于线图、柱图、组合图，
 饼图由于没有x、y轴，所以公共属性不是很多，更多的属性是在THPieChart本类中进行声明。而雷达图是没有继承自这个
 基类，因为MPChart库里面的雷达图有部分局限性就没有用，用的是另外的一个私人库，但是大体上的使用和前面四个图表
@@ -13,6 +15,7 @@ BaseChartView.java
     这个类相当于图表的容器，你可以只放一张图表也可以放进去很多张，它也有一个实体类封装了每一张图表的标题、副标题、
 字体大小、颜色以及图表对象。它是所有图表显示的基础，当多于一张图表时会在左侧出现tab栏显示图表名称列表，用来点击
 切换图表显示。它的使用上都是如下规则，以柱图为例：
+
         BaseChartView baseChartView = findViewById(R.id.bar_chart_view);
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();
         BaseChartViewEntity chartEntity1 = new BaseChartViewEntity();
@@ -39,6 +42,7 @@ BaseChartView.java
       
 LegendView.java
     这个类是把自定义图例列表和图表对象进行组合，最后返回的是一张带自定义图例的图表对象
+    
         LegendView pieView = new LegendView(pieChart.getContext(), legendDirection, chartView);//这个chartView就是图表对象
         pieView.setLegendOffset(leftLegendOffset, topLegendOffset, rightLegendOffset, bottomLegendOffset);//设置图例偏移
         List<LegendEntity> legendEntities = new ArrayList<>();
