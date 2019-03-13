@@ -7,11 +7,11 @@
 图例也添加了点击监听，返回当前所点击图例的下标。而前面三种图还是用的MPChart自带的图例，它仅限于图例数量较少
 的图表，而且图例也没有点击事件监听。
 
-##ChartValueItemEntity.java
+## ChartValueItemEntity.java
     这个实体类是每数据属性的集合，包括该组数据的值集合、颜色、字体大小、格式化方式、图例文字等。还包括部分图表
 特有的属性：线图的背景填充渐变色、堆叠柱状图的值集合和颜色集合，这三个属性有特定的构造方法，也可以用set方法设置
 
-##BaseChartView.java
+## BaseChartView.java
     这个类相当于图表的容器，你可以只放一张图表也可以放进去很多张，它也有一个实体类封装了每一张图表的标题、副标题、
 字体大小、颜色以及图表对象。它是所有图表显示的基础，当多于一张图表时会在左侧出现tab栏显示图表名称列表，用来点击
 切换图表显示。它的使用上都是如下规则，以柱图为例：
@@ -40,7 +40,7 @@
         baseChartView.clear();
         baseChartView.initData(chartViewEntities);
       
-##LegendView.java
+## LegendView.java
     这个类是把自定义图例列表和图表对象进行组合，最后返回的是一张带自定义图例的图表对象
     
         LegendView pieView = new LegendView(pieChart.getContext(), legendDirection, chartView);//这个chartView就是图表对象
