@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ **********************************************************
+  ~   author   fanjiaming
+  ~   company  telchina
+  ~   email    fanjiaming@telchina.net
+  ~   date     18-10-12 下午2:40
+  ~ *********************************************************
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/icon_arrow_check" android:state_selected="true"/>
+    <item android:drawable="@drawable/icon_arrow_normal" android:state_selected="false"/>
+</selector>

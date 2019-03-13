@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <color name="transparent_half">#50000000</color>
+
+    <!-- 中灰 -->
+    <color name="gray_mid">#c3c3c3</color>
+    <!-- 浅黑 -->
+    <color name="black">#000000</color>
+    <!-- 浅黑 87%-->
+    <color name="black_light">#D9000000</color>
+    <!--中黑-->
+    <color name="black_mid">#757575</color>
+</resources>

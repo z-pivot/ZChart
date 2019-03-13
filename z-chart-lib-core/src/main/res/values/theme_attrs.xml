@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimary" format="color"/>
+    <attr name="colorPrimaryDark" format="color"/>
+    <attr name="colorAccent" format="color"/>
+
+    <!--字体颜色-->
+    <attr name="tcPrimary" format="color"/>
+    <attr name="tcSubPrimary" format="color"/>
+    <attr name="tcReversePrimary" format="color"/>
+    <attr name="tcReverseSubPrimary" format="color"/>
+
+    <attr name="colorBackground" format="color"/>
+
+    <!--item默认与选中背景色-->
+    <attr name="itemBackgroundColor" format="color"/>
+    <attr name="selectableItemBackgroundColor" format="color"/>
+    <!--button默认与选中背景色-->
+    <attr name="buttonBackgroundColor" format="color"/>
+    <attr name="buttonStrokeColor" format="color"/>
+
+    <attr name="buttonBackground" format="reference"/>
+    <attr name="selectedButtonBackground" format="reference"/>
+
+    <!--分割线的颜色-->
+    <attr name="colorDivider" format="color"/>
+
+    <attr name="tsf_main_tab_textcolor_selector" format="reference"/>
+
+    <attr name="Callout_Style" format="reference"/>
+</resources>

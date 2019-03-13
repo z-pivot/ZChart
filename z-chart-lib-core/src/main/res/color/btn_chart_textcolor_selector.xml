@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ **********************************************************
+  ~   author   fanjiaming
+  ~   company  telchina
+  ~   email    fanjiaming@telchina.net
+  ~   date     18-10-12 下午2:42
+  ~ *********************************************************
+  -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/black" android:state_selected="true"/>
+    <item android:color="@color/black_light" android:state_selected="false"/>
+</selector>

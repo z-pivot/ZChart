@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="线图"/>
+    <Button
+        android:id="@+id/btn_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="柱图"/>
+    <Button
+        android:id="@+id/btn_line_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="组合图"/>
+    <Button
+        android:id="@+id/btn_pie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="饼图"/>
+    <Button
+        android:id="@+id/btn_radar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="雷达图"/>
+</LinearLayout>

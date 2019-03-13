@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ **********************************************************
+  ~   author   sundj
+  ~   company  telchina
+  ~   email    sdj_0702@163.com
+  ~   date     18-12-1 下午2:10
+  ~ *********************************************************
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="@dimen/dimens_small_small"
+              android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_color"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginRight="@dimen/dimens_small" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textsize_min"/>
+</LinearLayout>
