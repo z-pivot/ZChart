@@ -69,10 +69,10 @@ public class THHorizontalBarChart extends THBaseChart<THHorizontalBarChart> {
         
         //图例位置
         Legend legend = horizontalBarChart.getLegend();
-        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);//设置图例的水平位置
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);//设置图例的水平位置
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);//设置图例的垂直位置
         legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);//设置图例的排列方向
-        legend.setDrawInside(true);//设置图例是否显示在图表内部
+        legend.setDrawInside(false);//设置图例是否显示在图表内部
         legend.setXEntrySpace(10f);//设置图例在x方向上的间隔
         legend.setYOffset(-2f);//设置图例在y方向上的偏移
         legend.setTextColor(textColor != -1 ? textColor : ThemeUtil.getColor(horizontalBarChart.getContext(), R.attr.tcPrimary));
