@@ -17,7 +17,7 @@ BaseChartView.java
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();
         BaseChartViewEntity chartEntity1 = new BaseChartViewEntity();
         BaseChartViewEntity chartEntity2 = new BaseChartViewEntity();
-        
+         
         chartEntity1.chart = THBarChart.instance(new BarChart(getBaseContext()))
                 .setListBarValue(datas)//设置柱图数据 必要
                 ... ...
