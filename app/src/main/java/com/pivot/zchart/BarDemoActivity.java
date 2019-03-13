@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.pivot.chart.chart.THBarChart;
+import com.pivot.chart.chart.THHorizontalBarChart;
 import com.pivot.chart.entity.BaseChartViewEntity;
 import com.pivot.chart.entity.ChartValueItemEntity;
 import com.pivot.chart.view.BaseChartView;
@@ -50,10 +52,15 @@ public class BarDemoActivity extends AppCompatActivity {
         String[] listStackLegendText = new String[]{"柱1", "柱2", "柱3", "柱4", "柱5"};
         listStackBarValue.add(listValue1);listStackBarValue.add(listValue2);listStackBarValue.add(listValue3);
         
+        //横向柱状图数据初始化
+        List<ChartValueItemEntity> horizontalDatas = new ArrayList<>();
+        horizontalDatas.add(new ChartValueItemEntity(listValue1, new DefaultValueFormatter(1), 0, 12, "条目1", false));
+        
         BaseChartView baseChartView = findViewById(R.id.bar_chart_view);
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();
         BaseChartViewEntity chartEntity1 = new BaseChartViewEntity();
         BaseChartViewEntity chartEntity2 = new BaseChartViewEntity();
+        BaseChartViewEntity chartEntity3 = new BaseChartViewEntity();
         chartEntity1.chart = THBarChart.instance(new BarChart(getBaseContext()))
                 .setListBarValue(datas)//设置柱图数据 必要
                 .setListLabel(xLabelList)//设置x轴坐标文本 必要
@@ -73,9 +80,18 @@ public class BarDemoActivity extends AppCompatActivity {
                 .effect();//最后调用此方法使所有设置生效 必要
         chartEntity2.title = "";
         chartEntity2.subTitle = "堆叠柱状图";
+
+        chartEntity3.chart = THHorizontalBarChart.instance(new HorizontalBarChart(getBaseContext()))
+                .setListBarValue(horizontalDatas)//设置柱图数据 必要
+                .setListLabel(xLabelList)//设置x轴坐标文本 必要
+                .setTextColor(Color.BLACK)//设置x、y轴以及图例文本字体颜色 必要
+                .effect();//最后调用此方法使所有设置生效 必要
+        chartEntity3.title = "";
+        chartEntity3.subTitle = "横向柱状图";
         
         chartViewEntities.add(chartEntity1);
         chartViewEntities.add(chartEntity2);
+        chartViewEntities.add(chartEntity3);
         baseChartView.clear();
         baseChartView.initData(chartViewEntities);
     }

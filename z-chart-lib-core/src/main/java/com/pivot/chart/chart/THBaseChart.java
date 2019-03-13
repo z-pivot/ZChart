@@ -40,7 +40,7 @@ public class THBaseChart<T> {
     protected boolean isShowGridLine;//是否显示横向网格线
     protected boolean isShowAxisLeft = true;//是否显示左侧y轴，默认为true
     protected boolean isShowAxisRight;//是否显示右侧y轴，默认为false
-    protected boolean isPercentageValue = true;//提示框是否是百分数显示
+    protected boolean isPercentageValue = false;//提示框是否是百分数显示
     protected String title;//图表标题
     protected String leftDesc;//左轴说明
     protected String rightDesc;//右轴说明
