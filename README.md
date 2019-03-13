@@ -13,6 +13,7 @@ BaseChartView.java
     这个类相当于图表的容器，你可以只放一张图表也可以放进去很多张，它也有一个实体类封装了每一张图表的标题、副标题、
 字体大小、颜色以及图表对象。它是所有图表显示的基础，当多于一张图表时会在左侧出现tab栏显示图表名称列表，用来点击
 切换图表显示。它的使用上都是如下规则，以柱图为例：
+
         BaseChartView baseChartView = findViewById(R.id.bar_chart_view);
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();
         BaseChartViewEntity chartEntity1 = new BaseChartViewEntity();
@@ -39,6 +40,7 @@ BaseChartView.java
       
 LegendView.java
     这个类是把自定义图例列表和图表对象进行组合，最后返回的是一张带自定义图例的图表对象
+    
         LegendView pieView = new LegendView(pieChart.getContext(), legendDirection, chartView);//这个chartView就是图表对象
         pieView.setLegendOffset(leftLegendOffset, topLegendOffset, rightLegendOffset, bottomLegendOffset);//设置图例偏移
         List<LegendEntity> legendEntities = new ArrayList<>();
