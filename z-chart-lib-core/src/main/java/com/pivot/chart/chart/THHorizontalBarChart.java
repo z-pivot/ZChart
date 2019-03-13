@@ -29,7 +29,6 @@ import java.util.List;
 /**
  * 横向柱状图封装类
  */
-
 public class THHorizontalBarChart extends THBaseChart<THHorizontalBarChart> {
     private HorizontalBarChart horizontalBarChart;
 

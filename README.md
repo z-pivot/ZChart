@@ -61,4 +61,8 @@
         }
         pieView.initData(legendEntities);
 
-    
+![image01](https://github.com/fjm19960930/ZChart/blob/master/images/bar.jpg)
+![image01](https://github.com/fjm19960930/ZChart/blob/master/images/line.jpg)
+![image01](https://github.com/fjm19960930/ZChart/blob/master/images/pie.jpg)
+![image01](https://github.com/fjm19960930/ZChart/blob/master/images/radar.jpg)
+   
