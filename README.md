@@ -61,8 +61,12 @@
         }
         pieView.initData(legendEntities);
 
-![image01](https://github.com/fjm19960930/ZChart/blob/master/images/bar.jpg)
-![image01](https://github.com/fjm19960930/ZChart/blob/master/images/line.jpg)
-![image01](https://github.com/fjm19960930/ZChart/blob/master/images/pie.jpg)
-![image01](https://github.com/fjm19960930/ZChart/blob/master/images/radar.jpg)
+![lineChart](https://github.com/fjm19960930/ZChart/blob/master/images/lineChart.jpg)
+![barChart](https://github.com/fjm19960930/ZChart/blob/master/images/barChart1.jpg)
+![stackBarChart](https://github.com/fjm19960930/ZChart/blob/master/images/barChart2.jpg)
+![horizontalBarChart](https://github.com/fjm19960930/ZChart/blob/master/images/barChart3.jpg)
+![combinedChart](https://github.com/fjm19960930/ZChart/blob/master/images/combinedChart.jpg)
+![scatterChart](https://github.com/fjm19960930/ZChart/blob/master/images/scatterChart.jpg)
+![pieChart](https://github.com/fjm19960930/ZChart/blob/master/images/pieChart.jpg)
+![radarChart](https://github.com/fjm19960930/ZChart/blob/master/images/radarChart.jpg)
    
