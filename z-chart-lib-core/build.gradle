@@ -29,4 +29,5 @@ dependencies {
     implementation 'com.github.zcolin:ZFrame:2.0.9'
     implementation 'com.github.zcolin:ZRecyclerView:2.1.5'
     implementation 'q.rorbin:RadarView:1.0.4'
+    implementation 'org.xclcharts:lib:2.4'
 }
