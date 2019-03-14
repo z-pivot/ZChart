@@ -31,5 +31,5 @@ dependencies {
     implementation 'com.github.zcolin:ZFrame:2.0.9'
     implementation 'org.xclcharts:lib:2.4'
     compile 'com.github.xujiaji:happy-bubble:1.0.1'
-    implementation project(':z-chart-lib-core')
+    implementation project(':libChartCore')
 }
