@@ -12,6 +12,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -20,6 +21,7 @@
         <activity android:name=".CombinedDemoActivity" />
         <activity android:name=".PieDemoActivity" />
         <activity android:name=".RadarDemoActivity" />
+        <activity android:name=".ScatterDemoActivity"></activity>
     </application>
 
 </manifest>

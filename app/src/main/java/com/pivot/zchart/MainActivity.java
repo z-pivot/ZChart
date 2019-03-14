@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
         Button btnLine = findViewById(R.id.btn_line);
         Button btnBar = findViewById(R.id.btn_bar);
         Button btnCombined = findViewById(R.id.btn_line_bar);
+        Button btnScatter = findViewById(R.id.btn_scatter);
         Button btnPie = findViewById(R.id.btn_pie);
         Button btnRadar = findViewById(R.id.btn_radar);
         
         btnLine.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, LineDemoActivity.class));
         btnBar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, BarDemoActivity.class));
         btnCombined.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, CombinedDemoActivity.class));
+        btnScatter.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, ScatterDemoActivity.class));
         btnPie.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, PieDemoActivity.class));
         btnRadar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, RadarDemoActivity.class));
     }

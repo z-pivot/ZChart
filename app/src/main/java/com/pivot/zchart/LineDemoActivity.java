@@ -39,9 +39,9 @@ public class LineDemoActivity extends AppCompatActivity {
         listValue1.add(12f);listValue1.add(41f);listValue1.add(76f);listValue1.add(63f);listValue1.add(41f);
         listValue2.add(62f);listValue2.add(91f);listValue2.add(44f);listValue2.add(13f);listValue2.add(72f);
         listValue3.add(76f);listValue3.add(15f);listValue3.add(16f);listValue3.add(98f);listValue3.add(11f);
-        datas.add(new ChartValueItemEntity(listValue1, new DefaultValueFormatter(1), Color.BLACK, 12, 0, "条目1", true));
-        datas.add(new ChartValueItemEntity(listValue2, new DefaultValueFormatter(1), Color.BLUE, 12, R.drawable.line_fill_color, "条目2", true));
-        datas.add(new ChartValueItemEntity(listValue3, new DefaultValueFormatter(1), Color.RED, 12, 0, "条目3", true));
+        datas.add(new ChartValueItemEntity(listValue1, new DefaultValueFormatter(1), Color.BLACK, 12, true, "条目1", 0));
+        datas.add(new ChartValueItemEntity(listValue2, new DefaultValueFormatter(1), Color.BLUE, 12, true, "条目2", R.drawable.line_fill_color));
+        datas.add(new ChartValueItemEntity(listValue3, new DefaultValueFormatter(1), Color.RED, 12, true, "条目3", 0));
         
         BaseChartView baseChartView = findViewById(R.id.line_chart_view);
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();

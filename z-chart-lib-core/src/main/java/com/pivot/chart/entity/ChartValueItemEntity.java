@@ -8,6 +8,7 @@
  */
 package com.pivot.chart.entity;
 
+import com.github.mikephil.charting.charts.ScatterChart;
 import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 
@@ -25,9 +26,10 @@ public class ChartValueItemEntity {
     public IValueFormatter valueFormatter = new DefaultValueFormatter(1);//数值默认格式化方式，保留一位小数
     public List<Float> listValue;//数值集合
 
-    public int fillDrawable = 0;//渐变填充色，在drawable文件下自定义渐变样式 线图使用
-    public List<List<Float>> listStackBarValue;//堆叠图值集合 堆叠柱状图使用
+    public int fillDrawable = 0;//渐变填充色，在drawable文件下自定义渐变样式 线图专用
+    public List<List<Float>> listStackBarValue;//堆叠图值集合 堆叠柱状图专用
     public List<Integer> stackColorList;//堆叠柱状图颜色集合 必须设置
+    public ScatterChart.ScatterShape scatterShape;//顶点图形形状 散点图专用
 
     public static ChartValueItemEntity instance() {
         return new ChartValueItemEntity();
@@ -66,9 +68,9 @@ public class ChartValueItemEntity {
     }
 
     /**
-     * 线图时使用
+     * 线图使用
      */
-    public ChartValueItemEntity(List<Float> listValue, IValueFormatter valueFormatter, int color, int textSize, int fillDrawable, String legendLabel, boolean isShowValue) {
+    public ChartValueItemEntity(List<Float> listValue, IValueFormatter valueFormatter, int color, int textSize, boolean isShowValue, String legendLabel, int fillDrawable) {
         this.listValue = listValue;
         this.valueFormatter = valueFormatter;
         this.color = color;
@@ -76,6 +78,19 @@ public class ChartValueItemEntity {
         this.fillDrawable = fillDrawable;
         this.legendLabel = legendLabel;
         this.isShowValue = isShowValue;
+    }
+
+    /**
+     * 散点图使用
+     */
+    public ChartValueItemEntity(List<Float> listValue, IValueFormatter valueFormatter, int color, int textSize, boolean isShowValue, String legendLabel, ScatterChart.ScatterShape scatterShape) {
+        this.color = color;
+        this.textSize = textSize;
+        this.isShowValue = isShowValue;
+        this.legendLabel = legendLabel;
+        this.valueFormatter = valueFormatter;
+        this.listValue = listValue;
+        this.scatterShape = scatterShape;
     }
 
     /**
@@ -132,6 +147,11 @@ public class ChartValueItemEntity {
 
     public ChartValueItemEntity setLegendLabel(String legendLabel) {
         this.legendLabel = legendLabel;
+        return this;
+    }
+
+    public ChartValueItemEntity setScatterShape(ScatterChart.ScatterShape scatterShape) {
+        this.scatterShape = scatterShape;
         return this;
     }
 }

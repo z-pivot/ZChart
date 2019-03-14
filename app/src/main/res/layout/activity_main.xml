@@ -26,6 +26,13 @@
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="组合图"/>
     <Button
+        android:id="@+id/btn_scatter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_mid"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="散点图"/>
+    <Button
         android:id="@+id/btn_pie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
