@@ -277,7 +277,7 @@ public class THPieChart extends THBaseChart<THPieChart>{
     /**
      * 获取颜色集合
      */
-    private static List<Integer> getListColor() {
+    public static List<Integer> getListColor() {
         ArrayList<Integer> listColor = new ArrayList<>();
         String[] projectColor = new String[]{"#2bb0d3", "#66cc00", "#d400ea", "#0f68a7", "#b5d197", "#38a483"};
         for (String c : projectColor) {

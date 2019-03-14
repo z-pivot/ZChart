@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.pivot.chart.chart.THArcLineChart;
 import com.pivot.chart.chart.THPieChart;
 import com.pivot.chart.entity.BaseChartViewEntity;
+import com.pivot.chart.entity.ChartValueItemEntity;
 import com.pivot.chart.view.BaseChartView;
 import com.pivot.chart.view.LegendView;
+
+import org.xclcharts.chart.ArcLineChart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +28,7 @@ public class PieDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pie_demo);
 
-        //初始化数据
+        //初始化饼图数据
         List<Float> listPieValue = new ArrayList<>();
         List<String> labelList = new ArrayList<>();
         List<String> markerText = new ArrayList<>();
@@ -34,10 +38,20 @@ public class PieDemoActivity extends AppCompatActivity {
             markerText.add((i + 1) + "月销售额：" + listPieValue.get(i));
         }
         
+        //初始化弧线比较图数据
+        List<ChartValueItemEntity> listArcLineValue = new ArrayList<>();
+        listArcLineValue.add(new ChartValueItemEntity(75f, 0, "文体"));
+        listArcLineValue.add(new ChartValueItemEntity(45f, 0, "家具"));
+        listArcLineValue.add(new ChartValueItemEntity(17f, 0, "电器"));
+        listArcLineValue.add(new ChartValueItemEntity(52f, 0, "食品"));
+        listArcLineValue.add(new ChartValueItemEntity(69f, 0, "服饰"));
+        
         BaseChartView baseChartView = findViewById(R.id.pie_chart_view);
         List<BaseChartViewEntity> chartViewEntities = new ArrayList<>();
-        BaseChartViewEntity chartEntity = new BaseChartViewEntity();
-        chartEntity.chart = THPieChart.instance(new PieChart(getBaseContext()))
+        BaseChartViewEntity chartEntity1 = new BaseChartViewEntity();
+        BaseChartViewEntity chartEntity2 = new BaseChartViewEntity();
+        
+        chartEntity1.chart = THPieChart.instance(new PieChart(getBaseContext()))
                 .setListPieValue(listPieValue, null)//设置饼图数据 必要
                 .setCircleLabelList(labelList)//设置条目及图例名称列表 必要
                 .setRotation(true)//设置是否可旋转 非必要
@@ -56,8 +70,18 @@ public class PieDemoActivity extends AppCompatActivity {
                     }
                 })
                 .effect();//最后调用此方法使所有设置生效 必要
+        chartEntity1.subTitle = "饼状图";
         
-        chartViewEntities.add(chartEntity);
+        chartEntity2.chart = THArcLineChart.instance(getBaseContext(), new ArcLineChart())
+                .setListArcLineValue(listArcLineValue)
+                .setCenterText("月销售额(万元)")
+                .setInnerRaius(0.5f)
+                .setLegendYOffset(100f)
+                .effect();
+        chartEntity2.subTitle = "弧线比较图";
+        
+        chartViewEntities.add(chartEntity1);
+        chartViewEntities.add(chartEntity2);
         baseChartView.clear();
         baseChartView.initData(chartViewEntities);
     }
