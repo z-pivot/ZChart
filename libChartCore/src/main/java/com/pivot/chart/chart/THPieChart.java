@@ -18,7 +18,6 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.pivot.chart.entity.ChartValueItemEntity;
 import com.pivot.chart.entity.LegendEntity;
 import com.pivot.chart.util.ChartUtil;
@@ -125,7 +124,7 @@ public class THPieChart extends THBaseChart<THPieChart>{
                 legendEntity.legend = circleLabelList.get(i);//设置图例名称列表
                 legendEntity.textSize = legendTextSize;//设置图例文本字体大小
                 legendEntity.textColor = legendTextColor == 0 ? Color.BLACK : legendTextColor;//设置图例文本字体颜色
-                legendEntity.color = listColor == null ? getListColor().get(i) : listColor.get(i);//设置图标颜色
+                legendEntity.color = listColor == null ? ChartUtil.getListColor().get(i) : listColor.get(i);//设置图标颜色
                 legendEntity.onClickListener = v -> itemLegendListener.itemOnClick(itemNum);//设置点击响应
                 legendEntities.add(legendEntity);
             }
@@ -143,7 +142,7 @@ public class THPieChart extends THBaseChart<THPieChart>{
             listEntry.add(new PieEntry(value, circleLabelList.get(j)));
         }
         PieDataSet pieDataSet = new PieDataSet(listEntry, "");
-        pieDataSet.setColors(listColor == null ? getListColor() : listColor);//设置条目颜色
+        pieDataSet.setColors(listColor == null ? ChartUtil.getListColor() : listColor);//设置条目颜色
         pieDataSet.setSliceSpace(2f);//设置饼图切片之间的间隔
         pieDataSet.setDrawValues(isShowValues);//设置是否显示数据
         pieDataSet.setValueTextSize(12f);
@@ -272,37 +271,6 @@ public class THPieChart extends THBaseChart<THPieChart>{
     public THPieChart setItemLegendListener(LegendOnClickListener itemLegendListener) {
         this.itemLegendListener = itemLegendListener;
         return this;
-    }
-
-    /**
-     * 获取颜色集合
-     */
-    public static List<Integer> getListColor() {
-        ArrayList<Integer> listColor = new ArrayList<>();
-        String[] projectColor = new String[]{"#2bb0d3", "#66cc00", "#d400ea", "#0f68a7", "#b5d197", "#38a483"};
-        for (String c : projectColor) {
-            listColor.add(Color.parseColor(c));
-        }
-        for (int c : ColorTemplate.VORDIPLOM_COLORS) {
-            listColor.add(c);
-        }
-
-        for (int c : ColorTemplate.JOYFUL_COLORS) {
-            listColor.add(c);
-        }
-
-        for (int c : ColorTemplate.COLORFUL_COLORS) {
-            listColor.add(c);
-        }
-
-        for (int c : ColorTemplate.LIBERTY_COLORS) {
-            listColor.add(c);
-        }
-
-        for (int c : ColorTemplate.PASTEL_COLORS) {
-            listColor.add(c);
-        }
-        return listColor;
     }
     
     public interface LegendOnClickListener{

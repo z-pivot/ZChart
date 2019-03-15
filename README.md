@@ -7,7 +7,8 @@
 * 组合图（目前只支持线图和柱图的组合，这也是组合图的常用形式）
 * 散点图（相当于去除线图的线只保留点，点可以选择不同的形状，矩形、三角形、圆形等）
 * 饼图（图例自定义，防止条目数过多导致图例无法显示完全）
-* 雷达图（引自另一个私有库）
+* 雷达图（引自另一个私有库，基本的蜘蛛网形数据展示）
+* 弧形比较图（用于比较一类数据值的大小）
 
 ### THBaseChart.java
 所有图表的公共属性类THBaseChart，它抽取了常用图表的一些公共属性，这些公共属性主要用于线图、柱图、组合图，
@@ -79,3 +80,4 @@
 ![scatterChart](https://github.com/fjm19960930/ZChart/blob/master/images/scatterChart.jpg)
 ![pieChart](https://github.com/fjm19960930/ZChart/blob/master/images/pieChart.jpg)
 ![radarChart](https://github.com/fjm19960930/ZChart/blob/master/images/radarChart.jpg)
+![arcLineChart](https://github.com/fjm19960930/ZChart/blob/master/images/arcLineChart.jpg)

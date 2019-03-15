@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnScatter = findViewById(R.id.btn_scatter);
         Button btnPie = findViewById(R.id.btn_pie);
         Button btnRadar = findViewById(R.id.btn_radar);
+        Button btnArc = findViewById(R.id.btn_arc);
         
         btnLine.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, LineDemoActivity.class));
         btnBar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, BarDemoActivity.class));
@@ -26,5 +27,6 @@ public class MainActivity extends AppCompatActivity {
         btnScatter.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, ScatterDemoActivity.class));
         btnPie.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, PieDemoActivity.class));
         btnRadar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, RadarDemoActivity.class));
+        btnArc.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, ArcLineDemoActivity.class));
     }
 }

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.pivot.chart.entity.ChartValueItemEntity;
+import com.pivot.chart.util.ChartUtil;
 
 import org.xclcharts.chart.ArcLineChart;
 import org.xclcharts.chart.ArcLineData;
@@ -28,9 +29,10 @@ public class THArcLineChart extends ChartView {
     private int centerTextColor = Color.BLUE;//中心文本字体颜色
     private int backgroundColor = Color.TRANSPARENT;//背景颜色
     private float maxValue = 100f;//条目数据最大值
-    private float labelTextSize = 20f;//标签字体大小
-    private float centerTextSize = 20f;//中心文本字体大小
+    private float labelTextSize = 30f;//标签字体大小
+    private float centerTextSize = 50f;//中心文本字体大小
     private float centerTextPositionPro = 0f;//中心文本在半径轴线上的位置，值为0-1f，为0时不论什么方向文本就在正中心
+    private float legendTextSize = 20f;//图例文本字体大小
     private float legendRowSpan;//图例行间距
     private float legendColSpan = 10f;//图例列间距
     private float legendXOffset;//图例列表在x轴方向上的偏移
@@ -51,10 +53,55 @@ public class THArcLineChart extends ChartView {
     }
 
     public THArcLineChart effect() {
-        chartRender();
-        if (isZoom) {//綁定手势滑动事件
+        //设置绘图区默认缩进px值
+        int[] ltrb = new int[4];
+        ltrb[0] = DensityUtil.dip2px(getContext(), 10); //left	
+        ltrb[1] = DensityUtil.dip2px(getContext(), 65); //top	
+        ltrb[2] = DensityUtil.dip2px(getContext(), 10); //right		
+        ltrb[3] = DensityUtil.dip2px(getContext(), 10); //bottom	
+        arcLineChart.setPadding(ltrb[0], ltrb[1], ltrb[2], ltrb[3]);
+        arcLineChart.setApplyBackgroundColor(true);//是否绘制背景
+        arcLineChart.setBackgroundColor(backgroundColor);//背景颜色
+        arcLineChart.setLabelOffsetX(30f);//标签偏移
+        arcLineChart.setInnerRaius(innerRaius);//内环半径所占比例
+        arcLineChart.getLabelPaint().setTextSize(labelTextSize);//设置标签字体大小
+        if (isZoom) {//綁定手势事件
             this.bindTouch(this, arcLineChart);
         }
+
+        //中心文本信息
+        Paint paintLib = new Paint();
+        paintLib.setColor(centerTextColor);
+        paintLib.setTextAlign(Paint.Align.CENTER);
+        paintLib.setTextSize(centerTextSize);
+        paintLib.setAntiAlias(true);
+        arcLineChart.getPlotAttrInfo().addAttributeInfo(centerTextDirection, centerText, centerTextPositionPro, paintLib);
+
+        //图例
+        PlotLegend plotLegend = arcLineChart.getPlotLegend();
+        if (isShowLegend) {
+            plotLegend.hideBackground();
+            plotLegend.hideBorder();
+            plotLegend.hideBox();
+            plotLegend.setColSpan(legendColSpan);
+            plotLegend.setRowSpan(legendRowSpan);
+            plotLegend.setOffsetX(legendXOffset);
+            plotLegend.setOffsetY(legendYOffset);
+            plotLegend.getPaint().setTextSize(legendTextSize);
+            plotLegend.setType(XEnum.LegendType.COLUMN);//图例视图类型 并排或者并列显示
+            plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.LEFT);
+            plotLegend.setVerticalAlign(XEnum.VerticalAlign.TOP);
+        } else {
+            plotLegend.hide();
+        }
+
+        //绑定数据
+        LinkedList<ArcLineData> chartData = new LinkedList<>();
+        for (int w = 0; w < listArcLineValue.size(); w++) {
+            int defaultColor = listArcLineValue.get(w).color == 0 ? ChartUtil.getListColor().get(w) : listArcLineValue.get(w).color;
+            chartData.add(new ArcLineData(listArcLineValue.get(w).legendLabel, listArcLineValue.get(w).arcLineValue + "", listArcLineValue.get(w).arcLineValue * 100f / maxValue, defaultColor));
+        }
+        arcLineChart.setDataSource(chartData);
         return this;
     }
 
@@ -71,53 +118,6 @@ public class THArcLineChart extends ChartView {
         } catch (Exception ignored) {
 
         }
-    }
-
-    private void chartRender() {
-
-        //设置绘图区默认缩进px值
-        int[] ltrb = new int[4];
-        ltrb[0] = DensityUtil.dip2px(getContext(), 10); //left	
-        ltrb[1] = DensityUtil.dip2px(getContext(), 65); //top	
-        ltrb[2] = DensityUtil.dip2px(getContext(), 10); //right		
-        ltrb[3] = DensityUtil.dip2px(getContext(), 10); //bottom	
-        arcLineChart.setPadding(ltrb[0], ltrb[1], ltrb[2], ltrb[3]);
-        arcLineChart.setApplyBackgroundColor(true);//是否绘制背景
-        arcLineChart.setBackgroundColor(backgroundColor);//背景颜色
-        arcLineChart.setLabelOffsetX(30f);//标签偏移
-        arcLineChart.setInnerRaius(innerRaius);//内环半径所占比例
-        arcLineChart.getLabelPaint().setTextSize(labelTextSize);
-
-        //中心文本信息
-        Paint paintLib = new Paint();
-        paintLib.setColor(centerTextColor);
-        paintLib.setTextAlign(Paint.Align.CENTER);
-        paintLib.setTextSize(centerTextSize);
-        paintLib.setAntiAlias(true);
-        arcLineChart.getPlotAttrInfo().addAttributeInfo(centerTextDirection, centerText, centerTextPositionPro, paintLib);
-        
-        //图例
-        PlotLegend plotLegend = arcLineChart.getPlotLegend();
-        if (isShowLegend) {
-            plotLegend.hideBackground();
-            plotLegend.hideBorder();
-            plotLegend.hideBox();
-            plotLegend.setColSpan(legendColSpan);
-            plotLegend.setRowSpan(legendRowSpan);
-            plotLegend.setOffsetX(legendXOffset);
-            plotLegend.setOffsetY(legendYOffset);
-            plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
-        } else {
-            plotLegend.hide();
-        }
-
-        //绑定数据
-        LinkedList<ArcLineData> chartData = new LinkedList<ArcLineData>();
-        for (int w = 0; w < listArcLineValue.size(); w++) {
-            int defaultColor = listArcLineValue.get(w).color == 0 ? THPieChart.getListColor().get(w) : listArcLineValue.get(w).color;
-            chartData.add(new ArcLineData(listArcLineValue.get(w).legendLabel, listArcLineValue.get(w).arcLineValue + "", listArcLineValue.get(w).arcLineValue * 100f / maxValue, defaultColor));
-        }
-        arcLineChart.setDataSource(chartData);
     }
 
     public THArcLineChart setCenterText(String centerText) {
@@ -152,6 +152,11 @@ public class THArcLineChart extends ChartView {
 
     public THArcLineChart setCenterTextPositionPro(float centerTextPositionPro) {
         this.centerTextPositionPro = centerTextPositionPro;
+        return this;
+    }
+
+    public THArcLineChart setLegendTextSize(float legendTextSize) {
+        this.legendTextSize = legendTextSize;
         return this;
     }
 

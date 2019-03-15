@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
@@ -36,11 +37,13 @@ import android.widget.TextView;
 import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.formatter.DefaultValueFormatter;
 import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.FSize;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.pivot.z_chart_lib_core.R;
 import com.zcolin.frame.util.DisplayUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -815,5 +818,36 @@ public abstract class ChartUtil {
 
         container.addView(charView, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         return group;
+    }
+
+    /**
+     * 获取颜色集合
+     */
+    public static List<Integer> getListColor() {
+        ArrayList<Integer> listColor = new ArrayList<>();
+        String[] projectColor = new String[]{"#2bb0d3", "#66cc00", "#d400ea", "#0f68a7", "#b5d197", "#38a483"};
+        for (String c : projectColor) {
+            listColor.add(Color.parseColor(c));
+        }
+        for (int c : ColorTemplate.VORDIPLOM_COLORS) {
+            listColor.add(c);
+        }
+
+        for (int c : ColorTemplate.JOYFUL_COLORS) {
+            listColor.add(c);
+        }
+
+        for (int c : ColorTemplate.COLORFUL_COLORS) {
+            listColor.add(c);
+        }
+
+        for (int c : ColorTemplate.LIBERTY_COLORS) {
+            listColor.add(c);
+        }
+
+        for (int c : ColorTemplate.PASTEL_COLORS) {
+            listColor.add(c);
+        }
+        return listColor;
     }
 }
