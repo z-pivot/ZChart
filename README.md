@@ -1,7 +1,9 @@
 # 图表部分功能说明
-导入时在app的build.gradle文件中的dependencies下添加
+使用时在app的build.gradle文件中的dependencies下添加
 
         implementation "com.github.z-pivot:ZChart:1.0.0"
+        implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+        implementation 'org.xclcharts:lib:2.4'
 
 ## 包含的图表种类如下
 
