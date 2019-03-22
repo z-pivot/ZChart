@@ -1,5 +1,14 @@
 # 图表部分功能说明
-使用时在app的build.gradle文件中的dependencies下添加
+在整个工程的build.gradle文件中加：
+
+    allprojects {
+		    repositories {
+			    ...
+			    maven { url 'https://www.jitpack.io' }
+		    }
+	}
+	
+dependencies:
 
         implementation "com.github.z-pivot:ZChart:1.0.0"
         implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
