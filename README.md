@@ -10,7 +10,7 @@
 	
 dependencies:
 
-        implementation "com.github.z-pivot:ZChart:1.0.0"
+        implementation "com.github.z-pivot:ZChart:latest.release"
         implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
         implementation 'org.xclcharts:lib:2.4'
 
