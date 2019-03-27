@@ -23,6 +23,7 @@ dependencies:
 * 饼图（图例自定义，防止条目数过多导致图例无法显示完全）
 * 雷达图（引自另一个私有库，基本的蜘蛛网形数据展示）
 * 弧形比较图（用于比较一类数据值的大小）
+* 南丁格尔玫瑰图
 
 ### THBaseChart.java
 所有图表的公共属性类THBaseChart，它抽取了常用图表的一些公共属性，这些公共属性主要用于线图、柱图、组合图，
@@ -95,3 +96,4 @@ dependencies:
 ![pieChart](https://github.com/fjm19960930/ZChart/blob/master/images/pieChart.jpg)
 ![radarChart](https://github.com/fjm19960930/ZChart/blob/master/images/radarChart.jpg)
 ![arcLineChart](https://github.com/fjm19960930/ZChart/blob/master/images/arcLineChart.jpg)
+![roseChart](https://github.com/fjm19960930/ZChart/blob/master/images/roseChart.jpg)

@@ -99,7 +99,7 @@ public class THArcLineChart extends ChartView {
         LinkedList<ArcLineData> chartData = new LinkedList<>();
         for (int w = 0; w < listArcLineValue.size(); w++) {
             int defaultColor = listArcLineValue.get(w).color == 0 ? ChartUtil.getListColor().get(w) : listArcLineValue.get(w).color;
-            chartData.add(new ArcLineData(listArcLineValue.get(w).legendLabel, listArcLineValue.get(w).arcLineValue + "", listArcLineValue.get(w).arcLineValue * 100f / maxValue, defaultColor));
+            chartData.add(new ArcLineData(listArcLineValue.get(w).legendLabel, listArcLineValue.get(w).arcLineAndRoseValue + "", listArcLineValue.get(w).arcLineAndRoseValue * 100f / maxValue, defaultColor));
         }
         arcLineChart.setDataSource(chartData);
         return this;

@@ -8,49 +8,56 @@
         android:id="@+id/btn_line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="线图"/>
     <Button
         android:id="@+id/btn_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="柱图"/>
     <Button
         android:id="@+id/btn_line_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="组合图"/>
     <Button
         android:id="@+id/btn_scatter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="散点图"/>
     <Button
         android:id="@+id/btn_pie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="饼图"/>
     <Button
         android:id="@+id/btn_radar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="雷达图"/>
     <Button
         android:id="@+id/btn_arc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimens_mid"
+        android:layout_margin="@dimen/dimens_small"
         android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
         android:text="弧形比较图"/>
+    <Button
+        android:id="@+id/btn_rose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimens_small"
+        android:background="@drawable/radius_3_no_stroke_black66_bg_shape"
+        android:text="南丁格尔玫瑰图"/>
 </LinearLayout>

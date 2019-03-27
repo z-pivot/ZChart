@@ -22,7 +22,8 @@
         <activity android:name=".PieDemoActivity" />
         <activity android:name=".RadarDemoActivity" />
         <activity android:name=".ScatterDemoActivity" />
-        <activity android:name=".ArcLineDemoActivity"></activity>
+        <activity android:name=".ArcLineDemoActivity" />
+        <activity android:name=".RoseDemoActivity"></activity>
     </application>
 
 </manifest>

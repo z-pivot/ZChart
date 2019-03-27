@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <com.pivot.chart.view.BaseChartView
-        android:id="@+id/bar_chart_view"
-        android:layout_width="500dp"
-        android:layout_height="300dp"/>
+        android:id="@+id/rose_chart_view"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
 </LinearLayout>

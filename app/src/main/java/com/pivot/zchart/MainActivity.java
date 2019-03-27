@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnPie = findViewById(R.id.btn_pie);
         Button btnRadar = findViewById(R.id.btn_radar);
         Button btnArc = findViewById(R.id.btn_arc);
+        Button btnRose = findViewById(R.id.btn_rose);
         
         btnLine.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, LineDemoActivity.class));
         btnBar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, BarDemoActivity.class));
@@ -28,5 +29,6 @@ public class MainActivity extends AppCompatActivity {
         btnPie.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, PieDemoActivity.class));
         btnRadar.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, RadarDemoActivity.class));
         btnArc.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, ArcLineDemoActivity.class));
+        btnRose.setOnClickListener(v -> ActivityUtil.startActivity(MainActivity.this, RoseDemoActivity.class));
     }
 }

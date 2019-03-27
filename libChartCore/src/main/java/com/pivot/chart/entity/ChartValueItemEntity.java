@@ -27,7 +27,7 @@ public class ChartValueItemEntity {
     public List<Float> listValue;//数值集合
 
     public int fillDrawable = 0;//渐变填充色，在drawable文件下自定义渐变样式 线图专用
-    public double arcLineValue;//弧线比较图数据 
+    public double arcLineAndRoseValue;//弧线比较图或南丁格尔玫瑰图数据 
     public List<List<Float>> listStackBarValue;//堆叠图值集合 堆叠柱状图专用
     public List<Integer> stackColorList;//堆叠柱状图颜色集合 必须设置
     public ScatterChart.ScatterShape scatterShape;//顶点图形形状 散点图专用
@@ -86,12 +86,12 @@ public class ChartValueItemEntity {
     }
 
     /**
-     * 弧线比较图使用
+     * 弧线比较图和南丁格尔玫瑰图使用
      */
-    public ChartValueItemEntity(double arcLineValue, int color, String legendLabel) {
+    public ChartValueItemEntity(double arcLineAndRoseValue, int color, String legendLabel) {
         this.color = color;
         this.legendLabel = legendLabel;
-        this.arcLineValue = arcLineValue;
+        this.arcLineAndRoseValue = arcLineAndRoseValue;
     }
 
     /**
@@ -156,8 +156,8 @@ public class ChartValueItemEntity {
         return this;
     }
 
-    public ChartValueItemEntity setArcLineValue(double arcLineValue) {
-        this.arcLineValue = arcLineValue;
+    public ChartValueItemEntity setArcLineAndRoseValue(double arcLineAndRoseValue) {
+        this.arcLineAndRoseValue = arcLineAndRoseValue;
         return this;
     }
 }

@@ -23,6 +23,7 @@ public class RadarDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radar_demo);
 
+        //初始化数据
         List<List<Float>> listRadarValue = new ArrayList<>();
         List<Float> listValue1 = new ArrayList<>();
         List<Float> listValue2 = new ArrayList<>();
