@@ -57,7 +57,7 @@ public class LineDemoActivity extends AppCompatActivity {
                 .setTitle("线图")//设置图表标题 非必要
                 .setLeftDesc("y轴")//设置y左轴说明 非必要
                 .setRightDesc("")//设置右轴说明 非必要
-                .setSlide(false)
+                .setSlide(false)//是否允许x轴可滑动
                 .setTitleTextColor(Color.BLACK)//设置标题文本字体颜色 非必要
                 .setTitleTextSize(16)//设置标题文本字体大小 非必要
                 .setLabelRotationAngle(-30)//设置x轴文本倾斜角度 非必要
