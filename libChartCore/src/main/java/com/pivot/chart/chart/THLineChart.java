@@ -142,9 +142,9 @@ public class THLineChart extends THBaseChart<THLineChart>{
                     float value = (valueItem.listValue.get(j));
                     listEntry.add(new BarEntry(j, value));
                 }
-                if (valueItem.listValue.size() > xLabelNum) {//左右滑动
+                if (valueItem.listValue.size() > xLabelNum && isSlide) {//左右滑动
                     Matrix m = new Matrix();
-                    m.postScale((float) valueItem.listValue.size() / xLabelNum * 2, 1f);
+                    m.postScale((float) valueItem.listValue.size() / xLabelNum * slideOffset, 1f);
                     lineChart.getViewPortHandler().refresh(m, lineChart, false);
                 }
                

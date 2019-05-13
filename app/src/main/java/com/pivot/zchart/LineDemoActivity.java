@@ -36,8 +36,12 @@ public class LineDemoActivity extends AppCompatActivity {
         List<Float> listValue2 = new ArrayList<>();
         List<Float> listValue3 = new ArrayList<>();
         xLabelList.add("1月");xLabelList.add("2月");xLabelList.add("3月");xLabelList.add("4月");xLabelList.add("5月");
+        xLabelList.add("6月");xLabelList.add("7月");xLabelList.add("8月");xLabelList.add("9月");xLabelList.add("10月");
+        listValue1.add(12f);listValue1.add(41f);listValue1.add(76f);listValue1.add(63f);listValue1.add(41f);
         listValue1.add(12f);listValue1.add(41f);listValue1.add(76f);listValue1.add(63f);listValue1.add(41f);
         listValue2.add(62f);listValue2.add(91f);listValue2.add(44f);listValue2.add(13f);listValue2.add(72f);
+        listValue2.add(62f);listValue2.add(91f);listValue2.add(44f);listValue2.add(13f);listValue2.add(72f);
+        listValue3.add(76f);listValue3.add(15f);listValue3.add(16f);listValue3.add(98f);listValue3.add(11f);
         listValue3.add(76f);listValue3.add(15f);listValue3.add(16f);listValue3.add(98f);listValue3.add(11f);
         datas.add(new ChartValueItemEntity(listValue1, new DefaultValueFormatter(1), Color.BLACK, 12, true, "条目1", 0));
         datas.add(new ChartValueItemEntity(listValue2, new DefaultValueFormatter(1), Color.BLUE, 12, true, "条目2", R.drawable.line_fill_color));
@@ -53,6 +57,7 @@ public class LineDemoActivity extends AppCompatActivity {
                 .setTitle("线图")//设置图表标题 非必要
                 .setLeftDesc("y轴")//设置y左轴说明 非必要
                 .setRightDesc("")//设置右轴说明 非必要
+                .setSlide(false)
                 .setTitleTextColor(Color.BLACK)//设置标题文本字体颜色 非必要
                 .setTitleTextSize(16)//设置标题文本字体大小 非必要
                 .setLabelRotationAngle(-30)//设置x轴文本倾斜角度 非必要

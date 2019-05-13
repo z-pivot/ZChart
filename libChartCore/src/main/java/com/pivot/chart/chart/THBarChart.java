@@ -160,10 +160,10 @@ public class THBarChart extends THBaseChart<THBarChart>{
         for (int w = 0; w < listBarValue.size(); w++) {
             ChartValueItemEntity valueItem = listBarValue.get(w);
             List<BarEntry> listEntry = new ArrayList<>();
-            if ((valueItem.listValue != null && valueItem.listValue.size() > xLabelNum)
-                    || (valueItem.listStackBarValue != null && valueItem.listStackBarValue.size() > xLabelNum)) {//左右滑动
+            if (((valueItem.listValue != null && valueItem.listValue.size() > xLabelNum)
+                    || (valueItem.listStackBarValue != null && valueItem.listStackBarValue.size() > xLabelNum)) && isSlide) {//左右滑动
                 Matrix m = new Matrix();
-                m.postScale((float) valueItem.listValue.size() / xLabelNum * 2, 1f);
+                m.postScale((float) valueItem.listValue.size() / xLabelNum * slideOffset, 1f);
                 barChart.getViewPortHandler().refresh(m, barChart, false);
             }
             if (valueItem.listStackBarValue != null) {//如果是堆叠柱状图

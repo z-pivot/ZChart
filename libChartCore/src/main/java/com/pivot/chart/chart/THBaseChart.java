@@ -32,11 +32,13 @@ public class THBaseChart<T> {
     protected float maxLeftAxisMinimum = 0;//左侧Y轴最大值
     protected float minRightAxisMinimum = 0;//右侧Y轴最小值
     protected float maxRightAxisMinimum = 0;//右侧Y轴最小值
+    protected float slideOffset = 2f;//x轴可滑动时，轴文本之间的偏移倍数
     protected boolean isInvert;//Y轴是否反转
     protected boolean isScaleEnabled;//x、y轴是否可缩放
     protected boolean isTouchEnable = true;//图表是否可点击
     protected boolean isShowLegend = true;//是否显示图例
     protected boolean isShowMarkerView = true;//是否启用点击提示
+    protected boolean isSlide = true;//是否允许x轴左右滑动
     protected boolean isShowGridLine;//是否显示横向网格线
     protected boolean isShowAxisLeft = true;//是否显示左侧y轴，默认为true
     protected boolean isShowAxisRight;//是否显示右侧y轴，默认为false
@@ -106,6 +108,11 @@ public class THBaseChart<T> {
         return (T) this;
     }
 
+    public T setSlideOffset(float slideOffset) {
+        this.slideOffset = slideOffset;
+        return (T) this;
+    }
+
     public T setInvert(boolean invert) {
         this.isInvert = invert;
         return (T) this;
@@ -113,6 +120,11 @@ public class THBaseChart<T> {
 
     public T setScaleEnabled(boolean scaleEnabled) {
         isScaleEnabled = scaleEnabled;
+        return (T) this;
+    }
+
+    public T setSlide(boolean slide) {
+        isSlide = slide;
         return (T) this;
     }
 
