@@ -55,6 +55,7 @@ public class THPieChart extends THBaseChart<THPieChart>{
     private float rightExtraOffset = 0;//图形距右侧的偏移量
     private float topExtraOffset = 0;//图形距上侧的偏移量
     private float bottomExtraOffset = 0;//图形距下侧的偏移量
+    private boolean isInitAnimation = true;//是否允许初始动画
     private boolean isRotation;//是否可以旋转
     private boolean isCustomText;//markerView是否自定义文本
     private boolean isShowLabels;//是否显示条目描述
@@ -89,7 +90,6 @@ public class THPieChart extends THBaseChart<THPieChart>{
         pieChart.setTouchEnabled(isTouchEnable);//设置图表是否可点击
         pieChart.setRotationEnabled(isRotation);//设置是否可旋转
         pieChart.setHoleRadius(holeRadius);//设置中心圆洞半径
-        pieChart.animateY(700, Easing.EasingOption.EaseInOutQuad);
         pieChart.setExtraOffsets(leftExtraOffset, topExtraOffset, rightExtraOffset, bottomExtraOffset);//设置图表偏移
         pieChart.setOnChartValueSelectedListener(onChartValueSelectedListener);//设置条目点击响应
         pieChart.setTransparentCircleRadius(holeRadius * 1.05f);//设置圆洞外圆半径
@@ -98,6 +98,9 @@ public class THPieChart extends THBaseChart<THPieChart>{
         pieChart.setEntryLabelTextSize(entryTextSize);//设置条目描述文本字体大小
         pieChart.getLegend().setEnabled(false);//禁用MPChart自带的图例
         pieChart.setCenterTextOffset(0, 5);//微调中心文本的位置，Y轴方向向下偏移5dp
+        if (isInitAnimation) {
+            pieChart.animateY(700, Easing.EasingOption.EaseInOutQuad);
+        }
 
         if (isShowMarkerView) {//饼状图弹出框的文本内容可能需要包含大量的文字信息，而默认只提供数字显示则无法满足，所以这里需要修改个别弹出框属性
             markerView = new CommonMarkerView(pieChart.getContext(), R.layout.common_marker_view, markerDigit, isPercentageValue);
@@ -210,6 +213,11 @@ public class THPieChart extends THBaseChart<THPieChart>{
 
     public THPieChart setHoleRadius(float holeRadius) {
         this.holeRadius = holeRadius;
+        return this;
+    }
+
+    public THPieChart setInitAnimation(boolean initAnimation) {
+        this.isInitAnimation = initAnimation;
         return this;
     }
 
